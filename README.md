@@ -6,7 +6,7 @@ Detailed instructions are in the file [setup_aws_for_tensorflow_and_docker](http
 
 ## Perfomance
 
-Time per epoch (10000 EM updates on the deep_topic_modeling_deep_exponential_family.py) for different machines:
+Time per epoch (10000 EM updates on the [topic_modeling_deep_exponential_family.py](https://github.com/robertfeldt/edward_tensorflow_gpu/blob/master/analysis/topic_modeling/topic_modeling_deep_exponential_family.py)) for different machines:
 
 | Machine              | Time per epoch |
 | -------------------- | --------------:|
