@@ -4,7 +4,7 @@ These are some scripts to quickly get up and running with [Edward](http://edward
 
 Detailed instructions are in the file [setup_aws_for_tensorflow_and_docker](https://github.com/robertfeldt/edward_tensorflow_gpu/blob/master/amazon_aws/setup_aws_for_tensorflow_and_docker).
 
-## Perfomance
+## Performance
 
 Time per epoch (10000 EM updates on the [topic_modeling_deep_exponential_family.py](https://github.com/robertfeldt/edward_tensorflow_gpu/blob/master/analysis/topic_modeling/topic_modeling_deep_exponential_family.py)) for different machines:
 
