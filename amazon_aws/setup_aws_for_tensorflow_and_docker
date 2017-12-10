@@ -31,7 +31,7 @@ sudo dpkg -i /tmp/nvidia-docker_1.0.1-1_amd64.deb && rm /tmp/nvidia-docker_1.0.1
 sudo nvidia-docker run --rm nvidia/cuda nvidia-smi
 
 # 8. Clone the edward_tensorflow_gpu git repo
-git clone git@github.com:robertfeldt/edward_tensorflow_gpu.git
+git clone git://github.com/robertfeldt/edward_tensorflow_gpu.git
 
 # 9. Build the edward_tensorflow_gpu docker file
 edward_tensorflow_gpu/build_edward_docker
