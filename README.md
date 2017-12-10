@@ -12,3 +12,6 @@ Time per epoch (10000 EM updates on the [topic_modeling_deep_exponential_family.
 | -------------------- | --------------:|
 | MacBook Pro 13' 2015 |          1160s |
 | g2.2xlarge AWS EC2   |           165s |
+| Titan X (Pascal)     |            62s |
+
+The Titan X (Pascal) timing was reported in the [original script](https://github.com/blei-lab/edward/blob/master/examples/deep_exponential_family.py) in the Edward git repo.

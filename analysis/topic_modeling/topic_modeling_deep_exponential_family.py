@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 """Sparse Gamma deep exponential family (Ranganath et al., 2015). We
 apply it as a topic model on the collection of NIPS 2011 conference
 papers.
@@ -9,56 +9,6 @@ are numerically zero, which causes Gamma log probs to output inf.
 
 With default settings (in particular, with log normal variational
 approximation), it takes ~62s per epoch on a Titan X (Pascal).
-Following results are on epoch 12.
-
-Topic 0: let distribution set strategy distributions given learning
-    information use property
-Topic 1: functions problem risk function submodular cut level
-    clustering sets performance
-Topic 2: action value learning regret reward actions algorithm optimal
-    state return
-Topic 3: posterior stochastic approach information based using prior
-    mean divergence since
-Topic 4: player inference game propagation experts static query expert
-    base variables
-Topic 5: algorithm set loss weak algorithms optimal submodular online
-    cost setting
-Topic 6: sparse sparsity norm solution learning penalty greedy
-    structure wise regularization
-Topic 7: learning training linear kernel using coding accuracy
-    performance dataset based
-Topic 8: object categories image features examples classes images
-    class objects visual
-Topic 9: data manifold matrix points dimensional point low linear
-    gradient optimization
-
-A Gamma variational approximation produces worse results, which is
-likely due to the high variance in stochastic gradients. It takes ~2
-minutes per epoch on a Titan X (Pascal). Following results are on
-epoch 12.
-
-Negative log-likelihood <= 3738025.615
-Perplexity <= 266.623
-Topic 0: reasons posterior tion using similar tools university input
-    computed refers
-Topic 1: expected since much related rate defined optimization vector
-    thus neurons
-Topic 2: large linear given table shown true drop classification
-    constraints current
-Topic 3: proposed processing estimated better values gaussian form
-    test true setting
-Topic 4: see methods local several rate processing general vector
-    enables section
-Topic 5: thus case methods image dataset models different instead new
-    respectively
-Topic 6: based consider samples step object see kernel since problem
-    training
-Topic 7: approaches linear computing show gaussian data expected
-    analysis well proof
-Topic 8: fig point kernel bayesian solution applications results
-    follows regression computer
-Topic 9: conference optimization training pages maximum learning
-    dataset performance state inference
 """
 from __future__ import absolute_import
 from __future__ import division
@@ -198,8 +148,8 @@ inference_m.initialize(optimizer=optimizer_m)
 sess = ed.get_session()
 tf.global_variables_initializer().run()
 
-n_epoch = 10 # 20
-n_iter_per_epoch = 100 # 10000
+n_epoch = 20
+n_iter_per_epoch = 10000
 for epoch in range(n_epoch):
   print("Epoch {}".format(epoch))
   nll = 0.0
