@@ -34,7 +34,13 @@ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi
 git clone git://github.com/robertfeldt/edward_tensorflow_gpu.git
 
 # 9. Build the edward_tensorflow_gpu docker file
-edward_tensorflow_gpu/build_edward_docker
+cd edward_tensorflow_gpu/docker/edward_tensorflow_gpu
+./build_edward_docker
 
 # 10. Start the docker
-bin/start_for_topic_model
+cd
+edward_tensorflow_gpu/bin/start_for_topic_model
+
+# 11. To test everything works run the topic_model example (inside the docker)
+cd topic_modeling
+python2 topic_modeling_deep_exponential_family.py
