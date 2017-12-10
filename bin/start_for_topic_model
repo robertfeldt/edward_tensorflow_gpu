@@ -1,0 +1,1 @@
+sudo nvidia-docker run -v /home/ubuntu/edward_tensorflow_gpu/analysis:/data -it robertfeldt/edward_tensorflow_gpu:latest

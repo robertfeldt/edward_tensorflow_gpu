@@ -1,0 +1,1 @@
+sudo nvidia-docker build -t robertfeldt/edward_tensorflow_gpu .
