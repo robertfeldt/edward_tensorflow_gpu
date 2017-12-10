@@ -1,0 +1,40 @@
+# Based on blog post: https://towardsdatascience.com/using-docker-to-set-up-a-deep-learning-environment-on-aws-6af37a78c551
+
+# 1. Create a new AWS EC2 GPU instance.
+#   - I've mostly used g2.2xlarge so far
+
+# 2. Add more storage, 30GB
+
+# 3. Launch your instance in AWS EC2
+
+# 4. Update the NVIDIA graphic driver:
+sudo add-apt-repository ppa:graphics-drivers/ppa -y
+sudo apt-get update
+sudo apt-get install -y nvidia-375 nvidia-settings nvidia-modprobe
+
+# 5. Install the Docker Community Edition
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# Verify that the key fingerprint is 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update
+sudo apt-get install -y docker-ce
+
+# 6. Install nvidia-docker and its plugin
+wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
+sudo dpkg -i /tmp/nvidia-docker_1.0.1-1_amd64.deb && rm /tmp/nvidia-docker_1.0.1-1_amd64.deb
+
+# 7. Test your environment
+sudo nvidia-docker run --rm nvidia/cuda nvidia-smi
+
+# 8. Clone the edward_tensorflow_gpu git repo
+git clone git@github.com:robertfeldt/edward_tensorflow_gpu.git
+
+# 9. Build the edward_tensorflow_gpu docker file
+edward_tensorflow_gpu/build_edward_docker
+
+# 10. Start the docker
+bin/start_for_topic_model
