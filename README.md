@@ -1,4 +1,4 @@
-# Running Edward and TensorFlow with GPUs on Amazon AWS EC2
+# Edward & TensorFlow with GPUs on Amazon AWS EC2
 
 These are some scripts to quickly get up and running with [Edward](http://edwardlib.org/) and TensorFlow using GPUs on Amazon AWS EC2.
 
